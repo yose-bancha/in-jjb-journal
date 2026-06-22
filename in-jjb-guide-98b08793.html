@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常查询与延伸阅读 · jjb</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f6f5f3;
+      color: #1e1e1e;
+      line-height: 1.7;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, #0c1b2a 0%, #152b3e 100%);
+      color: #eaeef2;
+      padding: 3.8rem 2rem 3.2rem;
+      text-align: center;
+      border-bottom: 1px solid #2e4356;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 450;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #b8cddb;
+      max-width: 680px;
+      margin: 0 auto 0.3rem;
+    }
+
+    .hero .sub {
+      font-size: 0.95rem;
+      color: #8ba6b9;
+      margin-top: 0.5rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.6rem 1.8rem 4rem;
+    }
+
+    .intro-card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      margin-bottom: 2.5rem;
+      border: 1px solid #eae7e2;
+    }
+
+    .intro-card h2 {
+      font-size: 1.6rem;
+      font-weight: 430;
+      margin-bottom: 0.8rem;
+      color: #1d2c3b;
+    }
+
+    .intro-card p {
+      margin-bottom: 1.1rem;
+      color: #2f3f4e;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin: 2.2rem 0 2.8rem;
+    }
+
+    .feature-item {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.6rem 1.8rem;
+      border: 1px solid #e5e0da;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .feature-item h3 {
+      font-size: 1.2rem;
+      font-weight: 470;
+      margin-bottom: 0.5rem;
+      color: #1f3345;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #3d4e5d;
+    }
+
+    .scenario-list {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 2.2rem;
+      margin: 2rem 0 2.4rem;
+      border: 1px solid #eae7e2;
+    }
+
+    .scenario-list h3 {
+      font-size: 1.3rem;
+      font-weight: 440;
+      margin-bottom: 1rem;
+      color: #1d2c3b;
+    }
+
+    .scenario-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .scenario-list li {
+      padding: 0.5rem 0 0.5rem 1.4rem;
+      position: relative;
+      color: #2f3f4e;
+      border-bottom: 1px solid #f0ece6;
+    }
+
+    .scenario-list li:last-child {
+      border-bottom: none;
+    }
+
+    .scenario-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #a4815a;
+      font-weight: bold;
+    }
+
+    .tip-box {
+      background: #f1efe9;
+      border-radius: 16px;
+      padding: 1.6rem 2rem;
+      margin: 2.2rem 0 1.8rem;
+      border-left: 4px solid #8fa0b0;
+    }
+
+    .tip-box p {
+      color: #1e2e3d;
+      font-size: 0.98rem;
+    }
+
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 2.2rem;
+      border: 1px solid #eae7e2;
+      margin-top: 2.5rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #efebe5;
+      padding-bottom: 0.8rem;
+    }
+
+    .faq-mini details:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-mini summary {
+      font-weight: 470;
+      color: #1d2c3b;
+      cursor: pointer;
+      padding: 0.35rem 0;
+    }
+
+    .faq-mini summary:hover {
+      color: #a4815a;
+    }
+
+    .faq-mini p {
+      color: #3d4e5d;
+      font-size: 0.93rem;
+      margin-top: 0.4rem;
+      padding-left: 0.3rem;
+    }
+
+    a {
+      color: #a4815a;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      font-weight: 450;
+    }
+
+    a:hover {
+      border-bottom-color: #a4815a;
+      color: #7a6245;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #8b9aa8;
+      border-top: 1px solid #e0dbd4;
+      padding-top: 2.2rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .container {
+        padding: 1.8rem 1.2rem 3rem;
+      }
+
+      .intro-card,
+      .scenario-list,
+      .tip-box,
+      .faq-mini {
+        padding-left: 1.4rem;
+        padding-right: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>日常查询 · 对照 · 延伸阅读</h1>
+    <p>从一条索引出发，让信息检索变得更安静、更专注。</p>
+    <div class="sub">一种轻量的信息组织方式，围绕 <span style="border-bottom:1px solid #7f9bb0;">jjb</span> 展开</div>
+  </header>
+
+  <main class="container">
+    <section class="intro-card">
+      <h2>摘要：一个可沉淀的起点</h2>
+      <p>在信息过载的时代，我们往往需要一块属于自己的「安静索引板」—— 用来快速记录、对照和回溯那些反复出现的查询需求。网站 <a href="https://in-jjb.com">jjb</a> 正是基于这一思路：它不追求大而全，而是围绕特定关键词与上下文，提供结构化的内容聚合。</p>
+      <p>你可以把它看作一个知识锚点：无论是整理读书笔记、梳理行业术语，还是日常工作中需要反复查阅的对照表，都能在这里找到简洁的落脚点。每一次访问，都像打开一本私人的、不断生长的参考手册。</p>
+    </section>
+
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>对照友好</h3>
+        <p>页面内容采用并列与递进式编排，方便左右对照、上下参照，适合术语比对或概念厘清。</p>
+      </div>
+      <div class="feature-item">
+        <h3>延伸路径</h3>
+        <p>内嵌的引用与链接引导你从当前主题向外探索，而不是困在单一页面里反复刷新。</p>
+      </div>
+      <div class="feature-item">
+        <h3>低干扰阅读</h3>
+        <p>去除冗余装饰与动态广告，把视觉重心还给文字本身。深色头图用于定调，浅色正文区用于专注阅读。</p>
+      </div>
+      <div class="feature-item">
+        <h3>可复用结构</h3>
+        <p>无论你是自己维护内容，还是参考其组织逻辑，都能快速迁移到个人笔记或文档体系中。</p>
+      </div>
+    </div>
+
+    <section class="scenario-list">
+      <h3>常见使用场景</h3>
+      <ul>
+        <li>日常查询：对某个概念或缩写感到模糊，打开 <a href="https://in-jjb.com">jjb</a> 快速定位到归纳好的条目。</li>
+        <li>对照阅读：同时打开多个相关页面，利用站点的一致性排版进行横向比较。</li>
+        <li>延伸学习：顺着页面内嵌的引用线索，逐步展开对某一领域的系统了解。</li>
+        <li>内容裁剪：将需要的段落摘录至笔记软件，作为个人知识库的素材。</li>
+        <li>写作参考：在撰写报告或文章时，用作术语核实与背景补充的来源之一。</li>
+      </ul>
+    </section>
+
+    <div class="tip-box">
+      <p><strong>使用建议：</strong> 不必把这里当作唯一的信息源。更有效的方式是将它作为检索链条中的一环 —— 遇到陌生概念先来确认基础定义，再根据页面给出的线索去查阅更权威的文献或原始数据。保持批判性阅读，交叉验证总是必要的。</p>
+    </div>
+
+    <section class="faq-mini">
+      <h3 style="font-weight: 440; font-size: 1.2rem; margin-bottom: 0.6rem; color:#1d2c3b;">常见疑问摘要</h3>
+      <details>
+        <summary>这个网站的内容会频繁更新吗？</summary>
+        <p>更新节奏取决于所覆盖主题的活跃程度。通常会在有新的可靠信息或结构优化时进行调整，不追求每日刷新，但会保持内容有效性。</p>
+      </details>
+      <details>
+        <summary>我可以参考这里的结构做自己的笔记吗？</summary>
+        <p>当然可以。页面所采用的分层与对照逻辑本身就是一种通用模板，你可以根据自己的主题自由调整。我们鼓励这种知识组织方式的扩散。</p>
+      </details>
+      <details>
+        <summary>是否需要注册或付费才能使用？</summary>
+        <p>不需要。所有内容均公开可见，无需登录即可访问。网站不收集个人数据，也不包含任何付费墙或订阅入口。保持简单。</p>
+      </details>
+      <details>
+        <summary>内容来源可靠吗？是否存在主观倾向？</summary>
+        <p>每条内容都尽量基于可查证的资料或普遍共识，但任何二次整理都难免带有筛选视角。建议将本站作为索引起点，关键判断请参考一手来源。我们不对因依赖本站信息而产生的任何决策负责。</p>
+      </details>
+    </section>
+
+    <div class="footer-note">
+      <p>围绕 jjb 构建的查询与对照站 · 无广告 · 无追踪 · 仅作为信息索引参考</p>
+    </div>
+  </main>
+</body>
+</html>
